@@ -1,0 +1,34 @@
+/* SPDX-License-Identifier: AGPL-3.0-or-later
+
+Copyright (c) 2026 Adrian Cruceru - https://github.com/AdrianCX/picohive-firmware
+
+This program is free software: you can redistribute it and/or modify
+it under the terms of the GNU Affero General Public License as published
+by the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU Affero General Public License for more details.
+
+You should have received a copy of the GNU Affero General Public License
+along with this program.  If not, see <https://www.gnu.org/licenses/>.
+*/
+
+#include "image_load.h"
+#include "image_slot.h"
+
+bool ImageLoad::on_header(CommandContext& ctx)
+{
+    int32_t slot = image_slot(ctx);
+
+    if (slot < 0)
+    {
+        return ctx.reply_fmt(104, "error: expected image/load/<0-%d>, got [%.*s]", EpaperHandler::MAX_SLOT, (int)ctx.args.size(), ctx.args.data());
+    }
+
+    return ctx.reply_fmt(56, EpaperHandler::getInstance().show_picture(slot) ? "showing slot %d" : "error: slot %d is empty or the display is busy", (int)slot);
+}
+
+WS_COMMAND(ImageLoad);

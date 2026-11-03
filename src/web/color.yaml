@@ -1,0 +1,8 @@
+include: common.yaml
+
+tabs:
+  add_tab:
+    display:
+      dither: color7
+      width: 600
+      height: 448

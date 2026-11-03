@@ -1,0 +1,10 @@
+options:
+  dither:
+    choices: [color7, redblack]
+    required: true
+  width:
+    required: true
+  height:
+    required: true
+
+scripts: [dither.js, "dither/{{dither}}.js", display.js]

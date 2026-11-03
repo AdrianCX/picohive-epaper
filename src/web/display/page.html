@@ -1,0 +1,48 @@
+<canvas id="canvas" width="{{width}}" height="{{height}}"></canvas>
+
+<div class="control-panel">
+  <label data-t="disp.step1">1. Choose an image</label>
+  <input type="file" id="imgfile">
+  <br>
+  
+  <label data-t="disp.step2">2. Dithering method</label>
+  <select id="algorithm">
+      <option value="1" selected="selected" data-t="disp.alg1">Floyd–Steinberg (recommended)</option>
+      <option value="2" data-t="disp.alg2">Colour ranges</option>
+  </select>
+  
+  <br>
+  <input type="checkbox" id="stretch" name="stretch">
+  <label for="stretch" data-t="disp.stretch">Stretch to fill the panel</label>
+  
+  <input type="checkbox" id="calendarize" name="calendarize" checked="calendarize">
+  <label for="calendarize" data-t="disp.calendarize">Leave room for the calendar</label>
+  
+  <br>
+  <input type="button" id="btnLoad" data-t="disp.process" value="Preview" onclick="loadImage();">
+</div>
+
+<div class="control-panel">
+    <label for="imageslot" data-t="disp.slot">Storage slot</label>
+    <select name="imageslot" id="imageslot" style="width: auto; margin-right: 10px;">
+      <option value="0" selected>0</option>
+      <option value="1">1</option>
+      <option value="2">2</option>
+      <option value="3">3</option>
+      <option value="4">4</option>
+      <option value="5">5</option>
+      <option value="6">6</option>
+      <option value="7">7</option>
+      <option value="8">8</option>
+      <option value="9">9</option>
+      <option value="10">10</option>
+    </select>
+
+    <button id="upload" data-t="disp.upload" onclick="uploadImage();">Save to device</button>
+    <button id="load" data-t="disp.load" onclick="loadUploadedImage();">Load from device</button>
+    <button id="demo" data-t="disp.demo" onclick="calendarDemo();">Calendar demo</button>
+</div>
+
+<button id="show" data-t="disp.show" onclick="showImage();">Show on display</button>
+<button id="download" data-t="disp.download" onclick="downloadImage();">Download preview</button>
+

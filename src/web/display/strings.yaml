@@ -1,0 +1,72 @@
+tab.display:
+  cartoon: The Visual Cortex
+  clean: Image
+  xeno: Optic Relay
+disp.step1:
+  cartoon: 1. Traverse the Memoryscape
+  clean: 1. Choose an image
+  xeno: 01 — Recover a specimen from the archive
+disp.step2:
+  cartoon: '2. Perception Calibration:'
+  clean: 2. Dithering method
+  xeno: 02 — Calibrate perception
+disp.alg1:
+  cartoon: Floyd Steinberg Probabilistic Pixel Decay
+  clean: Floyd–Steinberg (recommended)
+  xeno: Floyd-Steinberg probabilistic decay
+disp.alg2:
+  cartoon: color ranges
+  clean: Colour ranges
+  xeno: Blunt spectral banding
+disp.stretch:
+  cartoon: Stretch Reality
+  clean: Stretch to fill the panel
+  xeno: Stretch reality to fit
+disp.calendarize:
+  cartoon: Collapse the Waveform West
+  clean: Leave room for the calendar
+  xeno: Collapse the waveform (west edge)
+disp.process:
+  cartoon: Process Visuals
+  clean: Preview
+  xeno: Resolve the specimen
+disp.slot:
+  cartoon: 'Pocket Dimension:'
+  clean: Storage slot
+  xeno: Cold storage vault
+disp.upload:
+  cartoon: Inscribe to the Void
+  clean: Save to device
+  xeno: Inscribe to the void
+disp.load:
+  cartoon: Resurrect the Echo
+  clean: Load from device
+  xeno: Call the echo back
+disp.show:
+  cartoon: Project the Construct!
+  clean: Show on display
+  xeno: Burn it onto the surface
+disp.download:
+  cartoon: Download the Signal!
+  clean: Download preview
+  xeno: Extract the signal
+lbl.project:
+  cartoon: Projecting the construct
+  clean: Show on display
+  xeno: Burning the surface
+lbl.inscribe:
+  cartoon: Inscribing to the void
+  clean: Save to device
+  xeno: Inscribing to the void
+disp.demo:
+  cartoon: Summon the Decoy
+  clean: Calendar demo
+  xeno: Mask the chronology
+lbl.demo:
+  cartoon: Summoning the decoy
+  clean: Calendar demo
+  xeno: Masking the chronology
+lbl.resurrect:
+  cartoon: Resurrecting the echo
+  clean: Load from device
+  xeno: Calling the echo back

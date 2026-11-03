@@ -1,0 +1,24 @@
+cfg.cals:
+  cartoon: Calendars
+  clean: Calendars
+  xeno: Chronology feeds
+cfg.cal1:
+  cartoon: 'Google Cal 1:'
+  clean: Calendar 1
+  xeno: 'Timeline α:'
+cfg.cal2:
+  cartoon: 'Google Cal 2:'
+  clean: Calendar 2
+  xeno: 'Timeline β:'
+sub.calendars:
+  cartoon: Calendars
+  clean: Calendars
+  xeno: Chronology
+cfg.tz:
+  cartoon: Temporal Anchor
+  clean: Time zone
+  xeno: Local reckoning
+cfg.tzLabel:
+  cartoon: 'Local Zone:'
+  clean: Zone
+  xeno: 'Zone:'

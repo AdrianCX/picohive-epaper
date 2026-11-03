@@ -1,0 +1,14 @@
+text: text.yaml
+
+config:
+  telegram: off
+  calendar: off
+  openai:   off
+  add_section:
+    calendars: calendars/
+
+tabs:
+  firmware: on
+  add_tab:
+    display:
+      from: display/

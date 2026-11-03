@@ -1,0 +1,24 @@
+title:
+  cartoon: Epaper display
+  clean: E-Paper Display
+  xeno: Xenoform Plate — surface probe
+hud.init:
+  xeno: Listening
+app.title:
+  cartoon: Epaper display
+  clean: E-Paper Display
+  xeno: Xenoform Plate
+app.tagline:
+  clean: Send an image to the panel, or change how the device is set up.
+  xeno: surface probe · unnamed body · no return window
+upg.hint:
+  cartoon: Upload .uf2.encrypted file to evolve the machine.
+  xeno: Feed it a new .uf2. What wakes up will wear the same shell.
+rt.onlineDetail:
+  xeno: it is listening. it has been listening.
+toast.contact:
+  cartoon: Wired in! The machine is listening.
+toast.reconnect:
+  cartoon: Re-summoning the machine...
+lbl.mindRead:
+  xeno: Reading the surface

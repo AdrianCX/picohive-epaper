@@ -1,0 +1,43 @@
+<table>
+  <th colspan="2" data-t="cfg.tz">Time zone</th>
+  <tr>
+    <td style="width: 130px;"><label for="timezone" data-t="cfg.tzLabel">Zone</label></td>
+    <td>
+      <select name="timezone" id="timezone" data-config="epaper.timezone" data-type="number">
+        <option value="0">UTC</option>
+        <option value="1">US &mdash; Hawaii (UTC-10)</option>
+        <option value="2">US &mdash; Alaska (UTC-9)</option>
+        <option value="3">US &mdash; Pacific (UTC-8)</option>
+        <option value="4">US &mdash; Arizona (UTC-7)</option>
+        <option value="5">US &mdash; Mountain (UTC-7)</option>
+        <option value="6">US &mdash; Central (UTC-6)</option>
+        <option value="7">US &mdash; Eastern (UTC-5)</option>
+        <option value="8">Argentina (UTC-3)</option>
+        <option value="9">Brazil &mdash; S&atilde;o Paulo (UTC-3)</option>
+        <option value="10">United Kingdom (UTC+0)</option>
+        <option value="11" selected>Central Europe &mdash; Paris, Berlin (UTC+1)</option>
+        <option value="12">Eastern Europe &mdash; Athens, Helsinki (UTC+2)</option>
+        <option value="13">Turkey (UTC+3)</option>
+        <option value="14">India (UTC+5:30)</option>
+        <option value="15">China (UTC+8)</option>
+        <option value="16">Japan (UTC+9)</option>
+        <option value="17">Australia &mdash; Sydney (UTC+10)</option>
+        <option value="18">New Zealand (UTC+12)</option>
+      </select>
+    </td>
+  </tr>
+</table>
+
+<div id="calendars_section">
+<table>
+  <th colspan="2" data-t="cfg.cals">Calendars</th>
+  <tr>
+    <td style="width: 130px;"><label data-t="cfg.cal1">Calendar 1</label></td>
+    <td><div class="secret-row"><input type="text" id="calendar_url" data-config="epaper.secret_calendar" name="calendar_url" value="" data-hint="" autocomplete="off" spellcheck="false"><input type="button" id="calendar_url_forget" data-t="cfg.forget" value="Forget" onclick="forgetSecret('calendar_url')" style="display:none"></div></td>
+  </tr>
+  <tr>
+    <td style="width: 130px;"><label data-t="cfg.cal2">Calendar 2</label></td>
+    <td><div class="secret-row"><input type="text" id="calendar_url_other" data-config="epaper.secret_calendar_other" name="calendar_url_other" value="" data-hint="" autocomplete="off" spellcheck="false"><input type="button" id="calendar_url_other_forget" data-t="cfg.forget" value="Forget" onclick="forgetSecret('calendar_url_other')" style="display:none"></div></td>
+  </tr>
+</table>
+</div>

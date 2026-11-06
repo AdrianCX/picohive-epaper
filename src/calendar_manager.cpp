@@ -62,21 +62,23 @@ bool CalendarManager::fetchCalendars()
     EpaperConfig& config = get_epaper_config();
     trace("CalendarManager::fetchCalendars, this=%p main=%d other=%d", this, config.calendar_main[0] != 0, config.calendar_other[0] != 0);
 
-    m_demo = false;
+    m_onSlot = false;
+    m_mask = false;
     m_retries = 0;
     fetchMain();
     return true;
 }
 
-bool CalendarManager::fetchDemo(uint32_t slot)
+bool CalendarManager::fetchOnSlot(uint32_t slot, bool mask)
 {
     if (!fetchCalendars())
     {
         return false;
     }
 
-    m_demo = true;
-    m_demoSlot = slot;
+    m_onSlot = true;
+    m_mask = mask;
+    m_slot = slot;
     return true;
 }
 
@@ -343,17 +345,18 @@ void CalendarManager::processEvents()
         temp[6]=0;
 
         calendar += temp;
-        appendTitle(ev.title, m_demo, calendar);
+        appendTitle(ev.title, m_mask, calendar);
 
         calendar += '\n';
     }
 
-    trace("CalendarManager::processEvents() this=%p finished, numevents[%d] demo[%d] range[%04d-%02d-%02d] textlen[%u]", this, (int)eventCount, m_demo, y, m, d, (unsigned int)calendar.size());
+    trace("CalendarManager::processEvents() this=%p finished, numevents[%d] onSlot[%d] mask[%d] range[%04d-%02d-%02d] textlen[%u]", this, (int)eventCount, m_onSlot, m_mask, y, m, d, (unsigned int)calendar.size());
 
-    if (m_demo)
+    if (m_onSlot)
     {
-        m_demo = false;
-        EpaperHandler::getInstance().show_calendar(calendar.c_str(), m_demoSlot, true);
+        m_onSlot = false;
+        m_mask = false;
+        EpaperHandler::getInstance().show_calendar(calendar.c_str(), m_slot, true);
         return;
     }
 

@@ -66,6 +66,14 @@ lbl.demo:
   cartoon: Summoning the decoy
   clean: Calendar demo
   xeno: Masking the chronology
+disp.calshow:
+  cartoon: Unveil the Chronology
+  clean: Show calendar
+  xeno: Reveal the chronology
+lbl.calshow:
+  cartoon: Unveiling the chronology
+  clean: Show calendar
+  xeno: Revealing the chronology
 lbl.resurrect:
   cartoon: Resurrecting the echo
   clean: Load from device

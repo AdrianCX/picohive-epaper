@@ -103,7 +103,16 @@ void on_boot()
     gpio_pull_up(KEY2);
     gpio_set_irq_enabled_with_callback(KEY2, GPIO_IRQ_EDGE_RISE | GPIO_IRQ_EDGE_FALL, true, &gpio_callback);
 
-    if (gpio_get(KEY1) == 0)
+    if (get_config().wifi_ssid[0] == 0)
+    {
+        trace("on_boot: no wifi configured, setup mode");
+        state = AppState::SETUP_MODE_START;
+
+        sleep_enabled = false;
+        access_point = true;
+        pico_deepsleep_clear_reason();
+    }
+    else if (gpio_get(KEY1) == 0)
     {
         state = AppState::CONFIG_MODE_START;
 

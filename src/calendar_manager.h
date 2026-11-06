@@ -31,7 +31,7 @@ class CalendarManager : public IHttpCallback
 public:
     bool fetchCalendars();
 
-    bool fetchDemo(uint32_t slot);
+    bool fetchOnSlot(uint32_t slot, bool mask);
 
     bool busy() const { return m_state != CalendarState::INIT; }
 
@@ -70,8 +70,9 @@ private:
     uint64_t m_retry_us = 0;
     uint32_t m_bytesReceived = 0;
 
-    bool m_demo = false;
-    uint32_t m_demoSlot = 0;
+    bool m_onSlot = false;
+    bool m_mask = false;
+    uint32_t m_slot = 0;
 
     char m_host[MAX_EPAPER_CONFIG_STR] = {};
     HTTPClient m_client;

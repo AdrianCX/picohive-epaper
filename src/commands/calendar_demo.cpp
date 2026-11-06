@@ -17,24 +17,11 @@ along with this program.  If not, see <https://www.gnu.org/licenses/>.
 */
 
 #include "calendar_demo.h"
-#include "calendar_manager.h"
-#include "image_slot.h"
+#include "calendar_slot.h"
 
 bool CalendarDemo::on_header(CommandContext& ctx)
 {
-    int32_t slot = image_slot(ctx);
-
-    if (slot < 0)
-    {
-        return ctx.reply_fmt(104, "error: expected calendar/demo/<0-%d>, got [%.*s]", EpaperHandler::MAX_SLOT, (int)ctx.args.size(), ctx.args.data());
-    }
-
-    if (!CalendarManager::getInstance().fetchDemo(slot))
-    {
-        return ctx.reply("error: calendar download already running, try again");
-    }
-
-    return ctx.reply_fmt(48, "fetching calendars for slot %d", (int)slot);
+    return CalendarSlot::start(ctx, name.data(), true);
 }
 
 WS_COMMAND(CalendarDemo);

@@ -190,8 +190,12 @@ function calendarDemo() {
     sendSlotCommand("calendar/demo", "lbl.demo");
 }
 
+function calendarShow() {
+    sendSlotCommand("calendar/show", "lbl.calshow");
+}
+
 function showCommandReply(path) {
     onMessage(path, (body) => hudToast(body.startsWith("error") ? "bad" : "ok", path + ": " + body));
 }
 
-["/rc/image/show", "/rc/image/save", "/rc/image/load", "/rc/calendar/demo"].forEach(showCommandReply);
+["/rc/image/show", "/rc/image/save", "/rc/image/load", "/rc/calendar/demo", "/rc/calendar/show"].forEach(showCommandReply);
